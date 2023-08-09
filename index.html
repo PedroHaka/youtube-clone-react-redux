@@ -4,10 +4,49 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Blutube - Enchanced Video Experience</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/index.js"></script>
   </body>
 </html>
+
+<!-- React Thoughts
+
+// The 'root' element (a '<div></div>') is the only element in 'index.html'. 
+// This is what React looks for when compiling shit and doing it's stuff: things inside 
+// 'index.html', more specifially, inside 'root' div.
+// Also please make sure to note that 'root' is manipulated by 'index.js' and that
+// 'App' Component is rendered by 'index.js' inside 'root' div. 
+
+// The 'index.js' script is analogous to the 'index.html' file in the sense that it holds 
+// together all parts of the application, but diferently, it is a script, not a html, so 
+// you benefit from logic and computing power. 
+// 'index.js' script renders only one element (component) which is 'App.js' Component.
+
+//'App' has the whole of the application scripts (components) rendered inside of it. 
+// Which passes to 'index.js', which passes to 'index.html'. 
+// Keeping track of this flow is the first thing everyone learns in React. So learn it!
+
+// Think of 'App.js' as a white blackboard screen, where things render themselves into.
+// Also think of 'index.js' as an event loop that keeps running and listening to whatever 
+// 'App.js' means at any given time or state of the application. 
+// And then it (re)renders itself inside 'root' div whenever the application is initialized,
+// and also as state is manipulated throughout the dataflow of the App.
+// Both htmls rendered and scripts that manipulate and re-render them are inside 'App.js'.
+// All components are inside 'App.js'. Sauron would be jealous... or Mussolini.
+
+// This keeps 'easy' (manageable) composing Complex Apps with lots of components, where is 
+// always a root to come back to when things get too complicated (they will).
+// In the end it looks like a tree (yay), the root being where other components are rendered 
+// into, and individual components acting as semi-root parent components (having children
+// components of their own, that could have children too, I mean, we are talking COMPLEX 
+// APPLICATIONS... I expect this simple Youtube-clone component tree to look like I used 
+// Treants for Christmas or smt).
+
+// So keeping track of your steps is a 'bread-leftovers-left-on-wood-for-finding-a-way-back-home'
+// kind of solution, but hey, it god-damn works. Just keep birds away (people messing in the 
+// trails).
+
+-->
