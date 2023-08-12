@@ -6,11 +6,18 @@ import { FaBars } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdNotifications, MdApps } from 'react-icons/md'
 
-function Header({ handleToggleSidebar }) {
+function Header({ handleToggleSidebar/*props*/ }) {
     return (
         <div className='border border-dark header'>
             <FaBars className='header__menu' size={26}
                 onClick={handleToggleSidebar}
+                //onclick event to access props.
+                //since props in this case is a function,
+                //but passed as a const, we let the onClick
+                //event be the called method, while it
+                //access the function iside props, and call it.
+                //We get an error calling handleToggleSidebar here.
+                //Like this: onClick={handleToggleSidebar()}.
             />
             <img
                 src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
