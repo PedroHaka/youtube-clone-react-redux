@@ -1,14 +1,17 @@
 import React from 'react'
 import './_header.scss';
+import '../../App.jsx';
 
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdNotifications, MdApps } from 'react-icons/md'
 
-function Header() {
+function Header({ handleToggleSidebar }) {
     return (
         <div className='border border-dark header'>
-            <FaBars className='header__menu' size={26} />
+            <FaBars className='header__menu' size={26}
+                onClick={handleToggleSidebar}
+            />
             <img
                 src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
                 alt=""
