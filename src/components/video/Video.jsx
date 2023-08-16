@@ -1,7 +1,7 @@
 import React from 'react'
 import './_video.scss'
 
-function Video() {
+const Video = () => {
     return (
         <div>
             Video

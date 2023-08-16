@@ -10,7 +10,7 @@ import {
     MdExitToApp
 } from 'react-icons/md'
 
-function Sidebar({sidebar, handleToggleSidebar}) {
+const Sidebar = ({sidebar, handleToggleSidebar}) => {
     return (
         <nav className={sidebar? 'sidebar open' : 'sidebar'}
             onClick={() => handleToggleSidebar(false)}

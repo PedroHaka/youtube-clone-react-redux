@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Categoriesbar from '../../components/categoriesbar/Categoriesbar'
 import Video from '../../components/video/Video'
 
-function HomeScreen() {
+const HomeScreen = () => {
     return (
         <Container>
             <Categoriesbar />
