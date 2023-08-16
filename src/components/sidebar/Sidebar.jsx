@@ -10,9 +10,11 @@ import {
     MdExitToApp
 } from 'react-icons/md'
 
-function Sidebar({sidebar}) {
+function Sidebar({sidebar, handleToggleSidebar}) {
     return (
-        <nav className={sidebar? 'sidebar open' : 'sidebar'}> 
+        <nav className={sidebar? 'sidebar open' : 'sidebar'}
+            onClick={() => handleToggleSidebar(false)}
+        > 
             <li>
                 <MdHome size={23} />
                 <span>Home</span>
