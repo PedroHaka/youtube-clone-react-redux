@@ -6,7 +6,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import HomeScreen from './screens/homeScreen/HomeScreen';
 import { Container } from 'react-bootstrap';
 import LoginScreen from './screens/loginScreen/LoginScreen';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
@@ -33,8 +33,18 @@ const Layout = ({ children }) => {
 }
 
 const App = () => {
+//insert Routing Logic Here.
+//I was using react-router-dom v5, but React 18 won't support it anymore, 
+//due to memory handling incompatibility, so I have to learn RRD v6 =)
+
     return (
-        <LoginScreen />
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Layout><HomeScreen /></Layout>} />
+                <Route path='/auth' element={<LoginScreen />} />
+                <Route path='/search' element={<Layout><h1>Search Me!</h1></Layout>} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
