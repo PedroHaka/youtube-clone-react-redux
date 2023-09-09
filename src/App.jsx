@@ -6,7 +6,8 @@ import Sidebar from './components/sidebar/Sidebar';
 import HomeScreen from './screens/homeScreen/HomeScreen';
 import { Container } from 'react-bootstrap';
 import LoginScreen from './screens/loginScreen/LoginScreen';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
 
 
 
@@ -33,9 +34,11 @@ const Layout = ({ children }) => {
 }
 
 const App = () => {
-//insert Routing Logic Here.
 //I was using react-router-dom v5, but React 18 won't support it anymore, 
-//due to memory handling incompatibility, so I have to learn RRD v6 =)
+//due to memory handling incompatibility, so I have to learn RRD v6 =).
+//EDIT: Learned the damn thing! Switch is now replaced with 'Routes'.
+//And using elements in each 'Route' is encouraged, rather than using Components.
+//So now it's working! Yay!! =) v6 is actually AWESOME, much less verbose S2.
 
     return (
         <BrowserRouter>
@@ -43,6 +46,7 @@ const App = () => {
                 <Route path='/' element={<Layout><HomeScreen /></Layout>} />
                 <Route path='/auth' element={<LoginScreen />} />
                 <Route path='/search' element={<Layout><h1>Search Me!</h1></Layout>} />
+                <Route path='/*'element={<Navigate to="/" replace={true} />}/>
             </Routes>
         </BrowserRouter>
     )

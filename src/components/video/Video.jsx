@@ -13,7 +13,7 @@ const Video = () => {
                 Create App in 5 Minutes #madebyHanzo
             </div>
             <div className="video__details">
-                <span><AiFillEye /> 5m Views •</span>
+                <span><AiFillEye /> 5m Views •&nbsp;</span>
                 <span>5 days ago</span>
             </div>
             <div className="video__channel">
