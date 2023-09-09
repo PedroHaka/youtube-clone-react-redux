@@ -39,6 +39,8 @@ const App = () => {
 //EDIT: Learned the damn thing! Switch is now replaced with 'Routes'.
 //And using elements in each 'Route' is encouraged, rather than using Components.
 //So now it's working! Yay!! =) v6 is actually AWESOME, much less verbose S2.
+//This is not ready, because Authentication and Firebase integration will require
+//changes in the routing used here, so more editing in the future.
 
     return (
         <BrowserRouter>
