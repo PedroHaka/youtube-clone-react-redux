@@ -8,8 +8,8 @@ $black-primary: #16181b;
 $black-secondary: #121417;
 $border-color: #4c4c4c;
 
-$breakpoint-medium: 1224px;
-$breakpoint-small: 520px;
+$breakpoint-medium: 992px;
+$breakpoint-small: 576px;
 
 // Global Styles
 * {
@@ -24,7 +24,9 @@ body {
     color: $text-color;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.1px;
+    width: 100%;
 }
+
 
 @mixin line-clamp($number) {
     overflow: hidden;

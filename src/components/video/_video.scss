@@ -1,7 +1,10 @@
 @import '../../_base.scss';
 
 .video {
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    //border: 1px solid red;
+    margin-bottom: 0.5rem;
     padding: 0.7rem;
 
     font-size: 0.9rem;
@@ -11,20 +14,23 @@
 
     &__top {
         margin-bottom: 0.5rem;
+        padding-bottom: 0.7rem;
+        //border: 1px solid blueviolet;
 
         img {
+            margin-bottom: -1.39rem;
+            //border: 1px solid yellow;
             width: 100%;
+            height: 100%;
         }
 
         span {
-            position: absolute;
-
-            bottom: 0.3rem;
-            right: 0.3rem;
+            
 
             padding: 0.2rem;
-            background: #080808ec;
+            background: #080808ab;
             border-radius: 3px;
+
         }
     }
 
@@ -37,6 +43,7 @@
         @include line-clamp(1);
 
     }
+
 
     &__details {
         display: flex;

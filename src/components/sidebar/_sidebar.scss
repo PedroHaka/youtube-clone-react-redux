@@ -6,8 +6,10 @@
     display: flex; 
     flex-direction: column;
 
+    
+
     width: 250px;
-    height: 90vh;
+    height: max-content;
     padding-top: 2rem;
 
     transition: transform 0.2s ease-in;
@@ -24,7 +26,7 @@
         span {
             margin-left: 1rem;
             
-            font-size: 14px;
+            font-size: 1rem;
             font-weight: 500;
             letter-spacing: 0.4px;
         }

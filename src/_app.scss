@@ -1,4 +1,13 @@
+@import './_base.scss';
+
 .app__container{
     display:flex;
     height: 90vh;
+}
+
+@media(max-width:$breakpoint-small){
+    .app__main{
+        transform: translateX(-12.5%);
+        z-index: -999;
+    }
 }
