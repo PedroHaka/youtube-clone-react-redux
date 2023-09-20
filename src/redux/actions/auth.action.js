@@ -1,17 +1,19 @@
-import firebase from '../../firebase'
-import auth from '../../firebase.js';
+import { signInWithPopup } from 'firebase/auth';
+import { firebaseApp, firebaseAuth, provider } from '../../firebase';
 
-const login = () => async dispatch => {
+//import firebase from '../../firebase'
+//import auth from '../../firebase';
+
+export const login = () => async dispatch => {
     try {
 
-        const provider = new firebase.auth.GoogleAuthProvider();
+        
 
-        const res = await auth.signInWithPopup(provider)
-        console.log(res)
+        const res = await signInWithPopup(firebaseAuth, provider);
+        console.log(res);
 
     } catch (error) {
-
+        console.error(error);
     }
 }
 
-export default login;

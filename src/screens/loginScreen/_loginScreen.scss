@@ -27,6 +27,10 @@
             &:focus {
                 outline: none;
             }
+            &:hover {
+                transform: scale(110%);
+                transition: ease-in-out;
+            }
         }
     }
 
