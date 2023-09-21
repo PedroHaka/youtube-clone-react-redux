@@ -20,7 +20,6 @@ const LoginScreen = () => {
         <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="BluTube Logo" />
         <p>This project uses Google Authentication via Firebase</p>
         <button onClick={handleLogin}>Login with Google</button>
-
       </div>
     </div>
   )
