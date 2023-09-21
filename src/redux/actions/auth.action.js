@@ -8,7 +8,6 @@ export const login = () => async dispatch => {
     try {
 
         
-
         const res = await signInWithPopup(firebaseAuth, provider);
         console.log(res);
 

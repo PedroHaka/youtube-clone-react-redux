@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import 'firebase/auth';
 //import 'firebase/firestore';
-import {getAuth, GoogleAuthProvider} from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,8 +17,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
 const auth = getAuth(app);
 
 const googleAuthProvider = new GoogleAuthProvider();
 
+// Firebase 10+ best practices include exporting modules with aliases, or "names".
 export { app as firebaseApp, auth as firebaseAuth, googleAuthProvider as provider };
