@@ -31,6 +31,10 @@ export const authReducer = (prevState = initialState, action) => {
             loading: false,
             error: payload
         }
+        case LOAD_PROFILE: return {
+            ...prevState,
+            user: payload
+        }
         default: return prevState;
 
     }
