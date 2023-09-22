@@ -1,6 +1,6 @@
 import { signInWithPopup } from 'firebase/auth';
 import { firebaseApp, firebaseAuth, provider } from '../../firebase';
-import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from '../actionType';
+import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT } from '../actionType';
 
 //import firebase from '../../firebase'
 //import auth from '../../firebase';
@@ -51,3 +51,12 @@ export const login = () => async dispatch => {
     }
 }
 
+export const log_out = () => async dispatch => {
+    await firebaseAuth.signOut()
+    dispatch({
+        type: LOG_OUT
+    })
+
+    sessionStorage.removeItem('ytclone-access-token');
+    sessionStorage.removeItem('ytclone-user');
+}
