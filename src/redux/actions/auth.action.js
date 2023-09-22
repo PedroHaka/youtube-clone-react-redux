@@ -13,7 +13,9 @@ export const login = () => async dispatch => {
         })
 
         const res = await signInWithPopup(firebaseAuth, provider);
-        console.log(res);
+        //console log for debugging purposes, checking if user 
+        //data from GoogleAuth is being received and passed to 'res' 
+        //console.log(res);
 
         const accessToken = res.user.accessToken
 
@@ -21,7 +23,14 @@ export const login = () => async dispatch => {
             name: res.user.displayName,
             photoURL: res.user.photoURL
         }
-        console.log(profile)
+        //console log for debugging purposes, checking if user 
+        //data from 'res' is being passed to 'profile' 
+        //console.log(profile)
+
+        sessionStorage.setItem('ytclone-access-token', accessToken);
+        sessionStorage.setItem('ytclone-user', JSON.stringify(profile));
+        // profile is an object, so we stringify it for storage.
+
 
         dispatch({
             type: LOGIN_SUCCESS,

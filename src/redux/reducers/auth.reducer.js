@@ -6,20 +6,25 @@ import {
 } from '../actionType';
 
 const initialState = {
-    accessToken: null,
-    user: null,
+    accessToken: sessionStorage.getItem('ytclone-access-token')
+        ? sessionStorage.getItem('ytclone-access-token')
+        : null,
+    user: sessionStorage.getItem('ytclone-user')
+        ? JSON.parse(sessionStorage.getItem('ytclone-user'))
+        //profile is stringified, so we parse it back to JSON 
+        : null,
     loading: false
 }
 
 export const authReducer = (prevState = initialState, action) => {
 
-    const {type, payload} = action;
+    const { type, payload } = action;
 
-    switch(type) {
+    switch (type) {
         case LOGIN_REQUEST: return {
             ...prevState,
             loading: true
-        } 
+        }
         case LOGIN_SUCCESS: return {
             ...prevState,
             accessToken: payload,
