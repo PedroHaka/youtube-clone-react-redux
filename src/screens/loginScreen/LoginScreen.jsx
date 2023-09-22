@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './_loginScreen.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/actions/auth.action';
+import { useNavigate } from 'react-router-dom';
 
 const LoginScreen = () => {
 
   const dispatch = useDispatch();
 
+  const accessToken = useSelector(state => state.auth.accessToken)
+
   const handleLogin = () => {
     dispatch(login());
     console.log("button pressed");
   }
+
+  const navigate = useNavigate()
+
+  // useEffect hook based on accessToken changes.
+  // Here we redirect user to Homescreen if 'accessToken !== null'
+  // In other words, if the user is authenticated, we redirect to Homescreeen.
+  useEffect(() => {
+    if (accessToken) {
+      navigate('/');
+    }
+
+  }, [accessToken, navigate]
+  )
 
   return (
     <div className="login">
