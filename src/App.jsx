@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from "react";
 import './_app.scss';
 import Header from './components/header/Header';
@@ -6,7 +6,8 @@ import Sidebar from './components/sidebar/Sidebar';
 import HomeScreen from './screens/homeScreen/HomeScreen';
 import { Container } from 'react-bootstrap';
 import LoginScreen from './screens/loginScreen/LoginScreen';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
@@ -34,6 +35,20 @@ const Layout = ({ children }) => {
 }
 
 const App = () => {
+
+
+const {accessToken, loading} = useSelector(state => state.auth);
+
+const navigate = useNavigate();
+
+useEffect(() => {
+    if(!accessToken && !loading){
+        navigate('/auth')
+    }
+}, [accessToken, loading, navigate])
+
+
+
 //I was using react-router-dom v5, but React 18 won't support it anymore, 
 //due to memory handling incompatibility, so I have to learn RRD v6 =).
 //EDIT: Learned the damn thing! Switch is now replaced with 'Routes'.
@@ -43,14 +58,12 @@ const App = () => {
 //changes in the routing used here, so more editing in the future.
 
     return (
-        <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Layout><HomeScreen /></Layout>} />
                 <Route path='/auth' element={<LoginScreen />} />
                 <Route path='/search' element={<Layout><h1>Search Me!</h1></Layout>} />
                 <Route path='/*'element={<Navigate to="/" replace={true} />}/>
             </Routes>
-        </BrowserRouter>
     )
 }
 
